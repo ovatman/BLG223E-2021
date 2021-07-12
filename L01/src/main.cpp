@@ -60,6 +60,7 @@ void array_examples(){
         cout<<ptr2[i]<<" ";
     cout << endl;
 
+    delete[] ptr2;
 
     int marr[2][3];
 
@@ -71,7 +72,9 @@ void array_examples(){
 
     cout<<parr<< " " << &parr[0] << " "<< &parr[1] <<endl;
 
-
+    delete[] parr[0];
+    delete[] parr[1];
+    delete[] parr;
 }
 
 void pointer_examples(){
