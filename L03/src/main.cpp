@@ -35,9 +35,12 @@ void stack_examples(){
     for(int i=0;i<15;i++)
         s.push(i);
         
-    for(int i=0;i<15;i++)
+    for(int i=0;i<5;i++)
         if(!s.isEmpty())
             cout<<s.pop()<<" ";
+    
+    s.push(100);
+    s.push(200);
 
     cout<<endl;
 }
