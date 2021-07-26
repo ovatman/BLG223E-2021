@@ -1,55 +1,37 @@
 #include <iostream>
 #include <stdio.h>
-#include "SingleLinkedList.h"
+#include "DoubleLinkedList.h"
 
 using namespace std;
 
-SingleLinkedList::SingleLinkedList(){
+DoubleLinkedList::DoubleLinkedList(){
     head=NULL;
     tail=NULL;
 }
 
-SingleLinkedList::~SingleLinkedList(){
+DoubleLinkedList::~DoubleLinkedList(){
     if(head!=NULL)
         delete head;
 }
 
-bool SingleLinkedList::contains(int data){
+DoubleNode* DoubleLinkedList::contains(int data){
 
-    Node* p=head;
+    DoubleNode* p=head;
     while(p!=NULL && p->get_data()!=data)
         p=p->get_next();
-    if(p==NULL)
-        return false;
-    else
-        return true;
+    return p;
 
 }
 
-void SingleLinkedList::clear_list(){
+void DoubleLinkedList::clear_list(){
     if(head!=NULL)
         delete head;    
     head=NULL;
     tail=NULL;
 }
 
-Node* SingleLinkedList::search(int data){
-    Node *p=head;
-
-    if(data<=head->get_data())
-        return NULL;
-    else{
-        while(p->get_next()){
-            if(p->get_next()->get_data()>=data)
-                return p;
-            p=p->get_next();
-        }
-        return p;
-    }
-
-}
-
-void SingleLinkedList::add_node(int n){
+void DoubleLinkedList::add_node(int n){
+    /*
     Node* new_node = new Node(n);
     if(head==NULL){
         head=new_node;
@@ -71,10 +53,12 @@ void SingleLinkedList::add_node(int n){
             prev->set_next(new_node);
         }
     }
+    */
 
 }
 
-void SingleLinkedList::remove_node(int n){
+void DoubleLinkedList::remove_node(int n){
+    /*
     Node* prev = this->search(n);
    
     if(head==tail){
@@ -104,11 +88,12 @@ void SingleLinkedList::remove_node(int n){
             delete cur;
         }
     }
+    */
 
 }
 
-void SingleLinkedList::print_list(){
-    Node* p=head;
+void DoubleLinkedList::print_list(){
+    DoubleNode* p=head;
     
     cout << "||->";
     while(p!=tail){

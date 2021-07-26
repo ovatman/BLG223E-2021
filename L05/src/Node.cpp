@@ -1,11 +1,14 @@
+#include <stdio.h>
 #include "Node.h"
 
 Node::Node(int data){
-    this->data= data;
+    this->data = data;
+    this->next = NULL;
 }
 
 Node::~Node(){
-    delete this->next;
+    if(this->next != NULL)
+        delete this->next;
 }
 
 void Node::set_data(int data){
