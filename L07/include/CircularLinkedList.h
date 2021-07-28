@@ -4,7 +4,6 @@
 class CircularLinkedList{
     private:
         DoubleNode* head;
-        DoubleNode* tail;
 
     public:
         CircularLinkedList();
