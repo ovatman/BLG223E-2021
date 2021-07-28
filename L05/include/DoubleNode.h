@@ -7,7 +7,6 @@ class DoubleNode{
 
     public:
         DoubleNode(int);
-        ~DoubleNode();
         void set_data(int);
         int get_data();
         void set_next(DoubleNode*);

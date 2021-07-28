@@ -7,11 +7,6 @@ DoubleNode::DoubleNode(int data){
     this->prev=NULL;
 }
 
-DoubleNode::~DoubleNode(){
-    if(this->next != NULL)
-        delete this->next;
-}
-
 void DoubleNode::set_data(int data){
     this->data=data;
 }
