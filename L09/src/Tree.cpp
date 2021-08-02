@@ -5,37 +5,53 @@
 
 using namespace std;
 
-Tree::Tree(){
+Tree::Tree(string preorder, string inorder){
 
-    this->root = new TreeNode('A');
+    this->root = recursive_construct(preorder,inorder);
 
-    TreeNode* Rl = new TreeNode('B');
-    TreeNode* Rr = new TreeNode('C');
-    
-    TreeNode* Rll = new TreeNode('D');
-    TreeNode* Rlr = new TreeNode('E');
-    TreeNode* Rrl = new TreeNode('F');
-    TreeNode* Rrr = new TreeNode('G');
+}
 
+Tree::~Tree(){
+    if(this->root != NULL)
+        this->postorder_destruct(this->root);
+    this->root=NULL;
+}
 
-    TreeNode* Rlrl = new TreeNode('H');
-    Rlr->set_left(Rlrl);
-    TreeNode* Rrlr = new TreeNode('I');
-    Rrl->set_right(Rrlr);
-    TreeNode* Rrrl = new TreeNode('J');
-    TreeNode* Rrrr = new TreeNode('K');
-    Rrr->set_left(Rrrl);
-    Rrr->set_right(Rrrr);
+void Tree::postorder_destruct(TreeNode* n){
+    if(n!=NULL){
+        this->postorder_destruct(n->get_left());
+        this->postorder_destruct(n->get_right());
+        delete n;
+    }
+}
 
-    this->root->set_left(Rl);
-    this->root->set_right(Rr);
+TreeNode* Tree::recursive_construct(string preorder, string inorder){
+    if(preorder.length()==0)
+        return NULL;
+    if(preorder.length()==1)
+        return new TreeNode(preorder[0]);
 
-    this->root->get_left()->set_left(Rll);
-    this->root->get_left()->set_right(Rlr);
-    this->root->get_right()->set_left(Rrl);
-    this->root->get_right()->set_right(Rrr);
-    
+    char root_data = preorder[0];
+    string in_left = inorder.substr(0,inorder.find(root_data));
+    string in_right = inorder.substr(inorder.find(root_data)+1);
 
+    string pre_left="";
+    string pre_right="";
+
+    for(char c:preorder.substr(1)){
+        int i = in_right.find(c);
+        if(i>=0)
+            break;
+        pre_left += c;
+    }
+    if(pre_left.length()>0)
+        pre_right = preorder.substr(preorder.find(pre_left[pre_left.length()-1])+1);
+    else pre_right = preorder.substr(preorder.find(root_data)+1);
+
+    TreeNode* local_root = new TreeNode(root_data);
+    local_root->set_left(recursive_construct(pre_left, in_left));
+    local_root->set_right(recursive_construct(pre_right, in_right));
+    return local_root;
 }
 
 void Tree::preorder_traverse(TreeNode* n){
@@ -87,6 +103,8 @@ void Tree::printPostOrder(){
 void Tree::printBreadthFirst(){
     TreeNode* temp;
     queue<TreeNode*> q;
+    if(this->root == NULL)
+        return;
 
     q.push(this->root);
 
@@ -102,38 +120,4 @@ void Tree::printBreadthFirst(){
     }
     
     cout<<endl;
-}
-
-void Tree::printTree(){
-        cout<<root->get_data()<<"("
-                          <<root->get_left()->get_data()
-                            <<"["
-                            <<root->get_left()->get_left()->get_data()
-                                <<"("
-                                <<","
-                                <<")"
-                            <<","
-                            <<root->get_left()->get_right()->get_data()     
-                                <<"("
-                                <<root->get_left()->get_right()->get_left()->get_data()
-                                <<","
-                                <<")"
-                            <<"]"
-                          <<","
-                          <<root->get_right()->get_data()
-                            <<"["
-                            <<root->get_right()->get_left()->get_data()  
-                                <<"("
-                                <<","
-                                <<root->get_right()->get_left()->get_right()->get_data()
-                                <<")"
-                            <<","
-                            <<root->get_right()->get_right()->get_data()
-                                <<"("
-                                <<root->get_right()->get_right()->get_left()->get_data()
-                                <<","
-                                <<root->get_right()->get_right()->get_right()->get_data()
-                                <<")"
-                            <<")"
-                          <<")"<<endl;
 }
