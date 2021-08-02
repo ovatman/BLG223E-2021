@@ -20,13 +20,18 @@ int main(int argc, char *argv[]){
 }
 
 void stl_list(){
-    vector<int> a_list;
+
+    list<int> a_list;
+    //vector<int> a_list;
 
     clock_t start = clock();
 
-    for(int i=0;i<10000000;i++)
-        a_list.push_back(i);
-
+    for(int i=0;i<500000;i++)
+        a_list.insert(a_list.begin(),i);    //check how vector behaves n: 100000-500000
+        //a_list.push_front(i);   // check how list and vector compares
+    
+    //checkut the following website for a more detialed comparison: https://baptiste-wicht.com/posts/2012/12/cpp-benchmark-vector-list-deque.html
+    
     clock_t end = clock();
 
     cout<< (double)(end - start) * 1000 / CLOCKS_PER_SEC << " milliseconds" << endl;
