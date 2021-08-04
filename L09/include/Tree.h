@@ -16,7 +16,6 @@ class Tree{
         Tree();
         Tree(string,string);
         ~Tree();
-        void printTree();
         void printPreOrder();
         void printInOrder();
         void printPostOrder();
