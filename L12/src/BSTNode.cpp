@@ -22,6 +22,9 @@ void BSTNode::add(int data){
 
 
 bool BSTNode::contains(int data){
+    if(this==NULL)
+        return false;
+        
     if(this->data>data)
         if(this->left != NULL)
             return this->left->contains(data);

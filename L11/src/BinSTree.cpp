@@ -9,6 +9,43 @@ BinSTree::BinSTree(){
     this->root=NULL;    
 }
 
+BinSTree::BinSTree(list<int> v){
+    if(v.size()==0){
+        this->root=NULL;
+        return;
+    }
+
+    int num_of_nodes = 1;
+    queue<Node*> q;
+
+    this->root=new Node(0);
+    q.push(this->root);
+
+    while(num_of_nodes<v.size()){
+        Node* n = q.front();
+        q.pop();
+        n->set_left(new Node(0));
+        num_of_nodes++;
+        q.push(n->get_left());
+        if(num_of_nodes==v.size())
+            break;
+        n->set_right(new Node(0));
+        num_of_nodes++;
+        q.push(n->get_right());
+    }
+    
+    v.sort();
+    this->inorder_construct(this->root,v);
+}
+
+void BinSTree::inorder_construct(Node* n, list<int>& v){
+    if(n!=NULL){
+        inorder_construct(n->get_left(),v);
+        n->set_data(v.front());
+        v.pop_front();
+        inorder_construct(n->get_right(),v);
+    }
+}
 
 Node* BinSTree::find_par(int data,Node*** child){
     

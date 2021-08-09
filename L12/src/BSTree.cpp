@@ -2,11 +2,35 @@
 #include <queue>
 #include "BSTree.h"
 
-using namespace std;
+
+
+BSTNode* BSTree::recursive_build(vector<int> v){
+    
+    if(v.size()==0)
+        return NULL;
+    if(v.size()==1)
+        return new BSTNode(v[0]);
+
+    
+    int mid = v.size()/2;
+    vector<int> left(v.begin(),v.begin()+mid);
+    vector<int> right(v.begin()+mid+1, v.end());
+
+    BSTNode* n = new BSTNode(v[mid]);
+    n->set_left(recursive_build(left));
+    n->set_right(recursive_build(right));
+
+    return n;
+}
 
 
 BSTree::BSTree(){
     this->root=NULL;    
+}
+
+BSTree::BSTree(vector<int> v){
+    sort(v.begin(),v.end()); 
+    this->root = this->recursive_build(v); 
 }
 
 

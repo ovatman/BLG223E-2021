@@ -5,6 +5,11 @@ using namespace std;
 
 int main(int argc, char *argv[]){
 
+    list<int> v;
+    v.assign({10,5,15,3,8,11,20,1,4,6,9,13});
+    BinSTree* t = new BinSTree(v);
+
+/*
     BinSTree* t = new BinSTree();
 
     t->add(10);
@@ -24,7 +29,7 @@ int main(int argc, char *argv[]){
     t->remove(5);
 
     t->remove(10);
-
+*/
     if(t->contains(30))
         t->printInOrder();
 

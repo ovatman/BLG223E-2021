@@ -1,4 +1,6 @@
+#include <list>
 #include "Node.h"
+using namespace std;
 
 class BinSTree{
     private:
@@ -8,9 +10,11 @@ class BinSTree{
         void postorder_traverse(Node*);
         void postorder_destruct(Node*);
         Node* find_par(int, Node***);
+        void inorder_construct(Node*,list<int>&);
     
     public:
         BinSTree();
+        BinSTree(list<int> v);
         ~BinSTree();
 
 

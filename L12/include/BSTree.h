@@ -1,4 +1,8 @@
+#include <vector>
+#include <algorithm>
 #include "BSTNode.h"
+
+using namespace std;
 
 class BSTree{
     private:
@@ -7,8 +11,10 @@ class BSTree{
         void inorder_traverse(BSTNode*);
         void postorder_traverse(BSTNode*);
         void postorder_destruct(BSTNode*);
+        BSTNode* recursive_build(vector<int>);
     
     public:
+        BSTree(vector<int> v);
         BSTree();
         ~BSTree();
                 
