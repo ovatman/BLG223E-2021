@@ -2,11 +2,12 @@
 You can follow the course using the following short videos
 
 ## 05-12.10	Introduction - Classes, objects, arrays, Templates, STL, complexity classes
-- L01 - [Containers Short Introduction](https://youtu.be/pOco9-1F8QQ)
-- L01 - [Environment Setup](https://youtu.be/ULInsximqOo)
+- [Containers Short Introduction](https://youtu.be/pOco9-1F8QQ)
+- [Environment Setup](https://youtu.be/ULInsximqOo)
 - L01 - [Pointers](https://youtu.be/oyuWo43ut-g)
 - L01 - [Dynamic Memory Management](https://youtu.be/c67Ap2VWxaU)
 - L02 - [Classes Objects Templates](https://youtu.be/6PJ3TRNknME)
+- [Overview of Algorithmic Complexity](https://youtu.be/GMLlj7imd4o)
 
 ## 19-26.10	Linked Lists and Recursion
 ## 02-09.11	Stacks and Queues
