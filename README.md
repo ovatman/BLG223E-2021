@@ -14,7 +14,8 @@ You can follow the course using the following short videos
 
 
 ## 02-09.11	Stacks and Queues
-- []() ()
+- [Stacks and Queues 1](https://youtu.be/ZBxt3S0l88Y) (L03)
+- [Stacks and Queues 2]() (L04)
 
 ## 30.11-07.12	Trees, Tree Traversals and Binary Search Trees
 - []() ()
