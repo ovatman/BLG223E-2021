@@ -25,9 +25,13 @@ You can follow the course using the following short videos
 
 ## 30.11-07.12	Trees, Tree Traversals and Binary Search Trees
 - [Trees and traversals](https://youtu.be/xKucrA7QjyU) 
+- [Binary Search Trees 1](https://youtu.be/KDF29Bd9j8w) (L11-L12)
+- [Binary Search Trees 2](https://youtu.be/1zA87Og_zOQ) (L11-L12)
+- [Binary Search Trees 3](https://youtu.be/S1wONm7BntM) (L11-L12)
+- 
 
 ## 14-21.12	Tries, Heaps and Balanced Trees
-- []() ()
+- [Tries](https://youtu.be/r33uGxDDyfQ) 
 
 ## 28.12-04.01 Skip Lists, Maps and Hashing
 - []() ()
