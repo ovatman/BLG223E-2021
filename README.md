@@ -32,7 +32,7 @@ You can follow the course using the following short videos
 ## 14-21.12	Tries, Heaps and Balanced Trees
 - [Tries](https://youtu.be/r33uGxDDyfQ) 
 - [Heaps](https://youtu.be/Ncrm9QVQ4YY) (L14)
-- [Priotiy Queues and Treaps](https://youtu.be/9X4ykPBFyzQ) 
+- [Priority Queues and Treaps](https://youtu.be/9X4ykPBFyzQ) 
 - [Balanced Trees 1](https://youtu.be/ETLMNhWjcGQ)
 - [Balanced Trees 2](https://youtu.be/nSvRZXsO4mM)
 
